@@ -1,17 +1,17 @@
 var btnGenerar = document.getElementById('generar');
 var tablaElemento = document.getElementById('table-elementos');
 var txtSemilla = document.getElementById('semilla');
-var numberK = document.getElementById('numberK');
+var numberD = document.getElementById('numberD');
 var numberIte = document.getElementById('numberite');
 //var datos = [];
 function btnGenerar_Click(event) {
   var semilla = txtSemilla.value;
-  var k = numberK.value;
+  var d = numberD.value;
   if (!semilla.trim().length || !semilla || semilla.trim().length < 4) {
     alert('Debe ingresar un valor para semilla de mínimo 4 dígitos');
     return;
   }
-  if (!k.trim().length || k < 4) {
+  if (!d.trim().length || d < 4) {
     alert('El valor de D debe ser mayor que 3');
     return;
   }
@@ -19,26 +19,25 @@ function btnGenerar_Click(event) {
     tablaElemento.removeChild(tablaElemento.firstElementChild);
   }
   var rndB = parseInt(txtSemilla.value);
-  for (var i = 0; i <= parseInt(numberIte.value); i++) {
-    var rnd = generar(rndB, numberK.value);
+  for (var i = 0; i <= parseInt(numberIte.value) - 1; i++) {
+    var rnd = generar(rndB, numberD.value);
     cant = i;
     var item = {
       indice: i,
       rn: rndB,
       valor: rnd
     };
-    //datos.push(item);
     addRow(item.indice, item.rn, item.valor);
     rndB = rnd;
   }
 };
-function generar(s, k) {
+function generar(s, d) {
   s = Math.pow(s, 2);
   var lengthS2 = String(s).length;
-  var borde = (lengthS2 - k) / 2;
+  var borde = (lengthS2 - d) / 2;
   borde = Math.round(borde);//en caso de jalar lado izquierdo desabilitar esto	
-  if (String(s).length > k) {
-    s = String(s).substr(borde, k);
+  if (String(s).length > d) {
+    s = String(s).substr(borde, d);
   }
   return String(s);
 };
