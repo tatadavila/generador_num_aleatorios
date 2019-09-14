@@ -2,27 +2,27 @@ var btnGenerar = document.getElementById('generar');
 var tablaElemento = document.getElementById('table-elementos');
 var txtSemilla1 = document.getElementById('semilla1');
 var txtSemilla2 = document.getElementById('semilla2');
-var numberK = document.getElementById('numberK');
+var numberD = document.getElementById('numberD');
 var numberIte = document.getElementById('numberite');
 var datos = [];
 function btnGenerar_Click(event) {
   var semilla = txtSemilla1.value;
-  var k = numberK.value;
-  if (!semilla.trim().length || !semilla) {
-    alert('Debe ingresar un valor para la semilla 1');
+  var d = numberD.value;
+  if (!semilla.trim().length || !semilla || semilla.trim().length < 4) {
+    alert('Debe ingresar un valor para la semilla 1 de mínimo 4 dígitos');
     return;
   }
   var semilla2 = txtSemilla2.value;
-  if (!semilla2.trim().length || !semilla2) {
-    alert('Debe ingresar un valor para la semilla 2');
+  if (!semilla2.trim().length || !semilla2 || semilla2.trim().length < 4) {
+    alert('Debe ingresar un valor para la semilla 2 de mínimo 4 digitos');
     return;
   }
   if (semilla.trim().length != semilla2.trim().length) {
     alert('Las semillas deben ser de la misma longitud');
     return;
   }
-  if (!k.trim().length || !k) {
-    alert('El valor de k debe ser mayor a 0 y positivo');
+  if (!d.trim().length || d < 4) {
+    alert('El valor de D debe ser mayor que 3 y positivo');
     return;
   }
   while (tablaElemento.childElementCount > 0) {
@@ -30,8 +30,8 @@ function btnGenerar_Click(event) {
   }
   var rndB = parseInt(txtSemilla1.value);
   var rndC = parseInt(txtSemilla2.value);
-  for (var i = 0; i <= parseInt(numberIte.value); i++) {
-    var rnd = generar(rndB, rndC, numberK.value);
+  for (var i = 0; i <= parseInt(numberIte.value) - 1; i++) {
+    var rnd = generar(rndB, rndC, numberD.value);
     cant = i;
     var item = {
       indice: i,
@@ -45,13 +45,13 @@ function btnGenerar_Click(event) {
     rndC = rnd;
   }
 };
-function generar(s, s2, k) {
+function generar(s, s2, d) {
   s = s * s2;
   var lengthS2 = String(s).length;
-  var borde = (lengthS2 - k) / 2;
+  var borde = (lengthS2 - d) / 2;
   borde = Math.round(borde);//en caso de jalar lado izquierdo desabilitar esto	
-  if (String(s).length > k) {
-    s = String(s).substr(borde, k);
+  if (String(s).length > d) {
+    s = String(s).substr(borde, d);
   }
   return String(s);
 };
