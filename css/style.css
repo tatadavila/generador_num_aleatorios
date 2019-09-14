@@ -1,5 +1,6 @@
 body {
   margin: 10px;
+  text-align: center;
 }
 
 .title {
@@ -7,6 +8,19 @@ body {
 }
 
 .cuadradosMedios h3 {
+  text-align: center;
+}
+.content {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.tableContent {
+  /* text-align: center; */
+  width: 50%;
+  margin: 0 auto;
+}
+table th {
   text-align: center;
 }
 
@@ -22,5 +36,5 @@ footer p {
 
 .copyright {
   color: #878787;
-  font-size: 17px;
+  font-size: 14px;
 }
