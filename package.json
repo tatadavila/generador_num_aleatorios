@@ -1,0 +1,23 @@
+{
+  "name": "actividad",
+  "version": "1.0.0",
+  "description": "Activity for Simulation Class",
+  "main": "index.js",
+  "dependencies": {
+    "MyModule": "^1.0.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tatadavila/generador_num_aleatorios.git"
+  },
+  "author": "Tatiana Davila Albis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tatadavila/generador_num_aleatorios/issues"
+  },
+  "homepage": "https://github.com/tatadavila/generador_num_aleatorios#readme"
+}

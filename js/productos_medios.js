@@ -35,11 +35,10 @@ function btnGenerar_Click(event) {
     cant = i;
     var item = {
       indice: i,
-      rn: rndB,
-      rn2: rndC,
+      rn: '0.' + rndB,
+      rn2: '0.' + rndC,
       valor: rnd
     };
-    //datos.push(item);
     addRow(item.indice, item.rn, item.rn2, item.valor);
     rndB = rndC;
     rndC = rnd;
@@ -49,7 +48,7 @@ function generar(s, s2, d) {
   s = s * s2;
   var lengthS2 = String(s).length;
   var borde = (lengthS2 - d) / 2;
-  borde = Math.round(borde);//en caso de jalar lado izquierdo desabilitar esto	
+  borde = Math.round(borde);
   if (String(s).length > d) {
     s = String(s).substr(borde, d);
   }
@@ -71,9 +70,6 @@ function addRow(index, rn, rn2, rnd) {
   td4.textContent = String(rnd);
   tablaElemento.appendChild(tr);
 };
-/*window.onload = function (){
-	btnGenerar.addEventListener('click', btnGenerar_Click);
-};*/
 
 window.addEventListener('load', function () {
   btnGenerar.addEventListener('click', btnGenerar_Click);
