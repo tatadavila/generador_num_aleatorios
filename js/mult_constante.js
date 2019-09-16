@@ -1,20 +1,22 @@
 var btnGenerar = document.getElementById('generar');
 var tablaElemento = document.getElementById('table-elementos');
 var txtSemilla = document.getElementById('semilla');
+var txtConstante = document.getElementById('constante');
 var numberD = document.getElementById('numberD');
-var constante = document.getElementById('constante');
 var numberIte = document.getElementById('numberite');
 
 function btnGenerar_Click(event) {
   var semilla = txtSemilla.value;
   var d = numberD.value;
-  var a = constante.value;
-  if (!semilla.trim().length || !semilla || semilla.trim().length < 4) {
-    alert('Debe ingresar un valor para semilla de mínimo 4 dígitos');
+  var a = txtConstante.value;
+
+  if (!semilla.trim().length || !semilla || semilla.trim().length != d) {
+    alert('Debe ingresar un valor para semilla de longitud ' + d);
     return;
   }
-  if (!a.trim().length || a < 4) {
-    alert('Debe ingresar un valor para la constante A de mínimo 4 dígitos');
+  if (!a.trim().length || a.trim().length < d) {
+    alert('Debe ingresar un valor para la constante de longitud ' + d);
+    return;
   }
   if (!d.trim().length || d < 4) {
     alert('El valor de D debe ser mayor que 3');
@@ -24,13 +26,13 @@ function btnGenerar_Click(event) {
     tablaElemento.removeChild(tablaElemento.firstElementChild);
   }
   var rndB = parseInt(txtSemilla.value);
-  var rndC = parseInt(constante.value);
+  var rndC = parseInt(txtConstante.value);
   for (var i = 0; i <= parseInt(numberIte.value) - 1; i++) {
     var rnd = generar(rndB, rndC, numberD.value);
     cant = i;
     var item = {
       indice: i,
-      rn: rndB,
+      rn: '0.' + rndB,
       rn2: '0.' + rndC,
       valor: rnd
     };
@@ -49,19 +51,23 @@ function generar(s, a, d) {
   }
   return String(s);
 };
-function addRow(index, rn, rnd) {
+function addRow(index, rn, rn2, rnd) {
   var tr = document.createElement('tr');
   var td1 = document.createElement('td');
   var td2 = document.createElement('td');
   var td3 = document.createElement('td');
+  var td4 = document.createElement('td');
   tr.appendChild(td1);
   tr.appendChild(td2);
   tr.appendChild(td3);
+  tr.appendChild(td4);
   td1.textContent = String(index);
   td2.textContent = String(rn);
-  td3.textContent = String(rnd);
+  td3.textContent = String(rn2);
+  td4.textContent = String(rnd);
   tablaElemento.appendChild(tr);
 };
+
 window.addEventListener('load', function () {
   btnGenerar.addEventListener('click', btnGenerar_Click);
 });

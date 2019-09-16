@@ -47,14 +47,37 @@
       <header>
         <h3 class="secondTitle">Algoritmo Lineal</h3>
       </header>
+      <div class="content">
+        <input type="text" name="semilla" id="semilla" placeholder="Semilla" />
+        <input type="txt" name="constante1" id="cAditiva" placeholder="Const. Aditiva">
+        <input type="txt" name="constante2" id="cMultiplicativa" placeholder="Const. Multiplicativa"><br>
+        <input type="txt" name="modulo" id="modulo" placeholder="Modulo">
+        <label for="ite"> | &nbsp;&nbsp;# de Iteraciones</label>
+        <input type="number" name="numberite" id="numberite" value="10"><br>
+        <button type="button" id="generar" class="btn btn-dark">Generar</button>
+      </div>
+      <br>
+      <div class="tableContent">
+        <table border="1" class="table table-dark table-striped">
+          <thead>
+            <tr>
+              <th>n</th>
+              <th>r(n)</th>
+              <th>Valor</th>
+            </tr>
+          </thead>
+          <tbody id="table-elementos">
+          </tbody>
+        </table>
+      </div>
     </article>
   </section>
-
   <footer>
     <br>
     <img class="rounded mx-auto d-block" src="./img/uac_logo.png" alt="logo uac" width="180" height="200">
     <p class="copyright">&copy 2019 TATIANA DAVILA ALBIS - SIMULACION</p>
   </footer>
 </body>
+<script type="text/javascript" src="js/lineal.js"></script>
 
 </html>

@@ -7,12 +7,12 @@ var numberIte = document.getElementById('numberite');
 var datos = [];
 function btnGenerar_Click(event) {
   var semilla = txtSemilla1.value;
+  var semilla2 = txtSemilla2.value;
   var d = numberD.value;
   if (!semilla.trim().length || !semilla || semilla.trim().length < 4) {
     alert('Debe ingresar un valor para la semilla 1 de mínimo 4 dígitos');
     return;
   }
-  var semilla2 = txtSemilla2.value;
   if (!semilla2.trim().length || !semilla2 || semilla2.trim().length < 4) {
     alert('Debe ingresar un valor para la semilla 2 de mínimo 4 digitos');
     return;
