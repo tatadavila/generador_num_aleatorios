@@ -6,9 +6,9 @@ Actividad en para la asignatura Simulacion, Universidad Autonoma del Caribe.
 - Algoritmo de Productos Medios
 - Algoritmo Multiplicador Constante
 - Algoritmo Lineal
-- Algoritmo COngruencial Multiplicativo
-- Algoritmo COngruencial Aditivo
-- Algoritmo COngruencial Cuadrático
+- Algoritmo Congruencial Multiplicativo
+- Algoritmo Congruencial Aditivo
+- Algoritmo Congruencial Cuadrático
 
-**_Sitio Web Despleado atravéz de HEROKU: _**
+** _Sitio Web Despleado atravéz de HEROKU:_ **
 https://numeros-aleatorios.herokuapp.com
