@@ -1,6 +1,6 @@
 # **GENERADOR DE NUMEROS PSEUDOALEATORIOS**
 
-Actividad en para la asignatura Simulacion, Universidad Autonoma del Caribe.
+Actividad para la asignatura Simulacion, Universidad Autonoma del Caribe.
 
 - Algoritmo de Cuadrados Medios
 - Algoritmo de Productos Medios
