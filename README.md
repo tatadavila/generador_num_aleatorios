@@ -10,5 +10,5 @@ Actividad en para la asignatura Simulacion, Universidad Autonoma del Caribe.
 - Algoritmo COngruencial Aditivo
 - Algoritmo COngruencial Cuadrático
 
-**_Sitio Web Despleado atravéz de HEROKU_**
-https://numeros-aleatorios.herokuapp.com
+**_Sitio Web Despleado atravéz de [HEROKU:] _**
+(https://numeros-aleatorios.herokuapp.com)
